@@ -5,12 +5,14 @@ import java.util.Scanner;
  */
 public class Game {
     public static void run() throws Exception {
-        System.out.println("Welcome to the Jungle" );
+        System.out.println("Welcome to the Jungle");
 
-        Player player =  new Player ();
-        player.chooseName();
-        player.chooseWeapon();
-        player.chooseArea();
+        while (true) {
+            Player player = new Player();
+            player.chooseName();
+            player.chooseWeapon();
+            player.chooseArea();
+        }
     }
 
     static String nextLine(){
@@ -20,6 +22,8 @@ public class Game {
             if (s.equals("/help")){
                 System.out.println("These are the available commands:");
                 System.out.println("/help => List available commands.");
+            }else if (s.equals("/exit")){
+                System.exit (0);
             }
             return nextLine();
         }else {
