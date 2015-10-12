@@ -5,10 +5,10 @@ import java.util.Scanner;
  */
 public class Game {
     static Player player;
+
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to the Jungle");
         player = new Player();
-
 
         while (true) {
             player.chooseName();
