@@ -4,16 +4,20 @@ import java.util.Scanner;
 /**
  * Created by cameronoakley on 10/9/15.
  */
-public class Player {
-    String name;
+public class Player extends Character {// extends - common feature between classes
     String weapon;
     String area;
     ArrayList items = new ArrayList();
 
+    public Player() {//setting up constructors
+        health = 100;
+        damage = 20;
+    }
+
     void chooseName(){
         System.out.println("What is your name, traveler?");
         name = Game.nextLine();
-        System.out.println("Good luck," + name);
+        System.out.println(String.format("Good luck %s", name));
     }
 
     void chooseWeapon() throws Exception {
@@ -46,7 +50,7 @@ public class Player {
         System.out.println("Found item! Pick it up? [y/n]");
         String s = Game.nextLine();
         if (s.equals("y")){
-            System.out.println("You found a" + item);
+            System.out.println(String.format("You found a %s", item));
             items.add(item);
         }
     }
