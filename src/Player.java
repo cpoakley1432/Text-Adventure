@@ -5,7 +5,6 @@ import java.util.Scanner;
  * Created by cameronoakley on 10/9/15.
  */
 public class Player extends Character {// extends - common feature between classes
-    String weapon;
     String area;
     ArrayList items = new ArrayList();
 
@@ -23,15 +22,19 @@ public class Player extends Character {// extends - common feature between class
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up a sword");
         System.out.println("[2] Pick up a mallet");
-        weapon = Game.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        int weaponNum = Integer.valueOf(Game.nextLine());
         if (weaponNum == 1) {
-            System.out.println("That's a fine sword");
+            weapon = new Weapon();//create object
+            weapon.name = "Sword";//set field
+            weapon.damage= 10;
         } else if (weaponNum == 2) {
-            System.out.println("That's a heavey mallet");
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 10;
         } else {
             throw new Exception("Invalid weapon.");
         }
+        System.out.println(String.format("That's a fine %s", weapon.name.toLowerCase()));
     }
     void chooseArea() throws Exception {
         System.out.println("[1] Enter the forest");
