@@ -6,7 +6,7 @@ import java.util.Scanner;
  */
 public class Player extends Character {// extends - common feature between classes
     String area;
-    ArrayList items = new ArrayList();
+    ArrayList<String> items = new ArrayList();
 
     public Player() {//setting up constructors
         health = 100;
